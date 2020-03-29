@@ -20,8 +20,9 @@ defmodule Lastfmex.MixProject do
   defp deps do
     [
       {:credo, "~> 1.3"},
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
       {:httpoison, "~> 1.6"},
-      {:poison, "~> 3.1"}
+      {:poison, "~> 4.0"}
     ]
   end
 end
