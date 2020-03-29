@@ -1,4 +1,6 @@
 defmodule Lastfmex do
+  alias Lastfmex.URL
+
   @moduledoc """
   Documentation for `Lastfmex`.
   """
@@ -13,6 +15,11 @@ defmodule Lastfmex do
 
   """
   def hello do
-    :world
+    {:ok, response} =
+      URL.form_url("user.getinfo", "evil_zlayo")
+      |> HTTPoison.get()
+
+    response.body
+    |> Poison.decode!()
   end
 end
