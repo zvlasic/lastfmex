@@ -1,13 +1,13 @@
 # Lastfmex
 
-**TODO: Add description**
+**WORK IN PROGRESS**
 
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `lastfmex` to your list of dependencies in `mix.exs`:
+by adding `lastfmex` to your list of dependencies in `mix.exs` :
 
-```elixir
+``` elixir
 def deps do
   [
     {:lastfmex, "~> 0.1.0"}
