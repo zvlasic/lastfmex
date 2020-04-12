@@ -8,8 +8,10 @@ defmodule Lastfmex.Service do
         |> URI.to_string()
         |> HTTPoison.get()
 
-      response.body
-      |> Poison.decode!()
+      case response.status_code do
+        200 -> Poison.decode!(response.body)
+        404 -> {:error, :not_found}
+      end
     end
   end
 
