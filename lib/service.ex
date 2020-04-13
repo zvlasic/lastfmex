@@ -1,4 +1,5 @@
 defmodule Lastfmex.Service do
+  @spec call(String.t(), String.t(), Keyword.t()) :: map() | {:error, :not_found}
   def call(api_method, user_name, optional \\ []) do
     with :ok <- sanitize(api_method, optional) do
       {:ok, response} =
