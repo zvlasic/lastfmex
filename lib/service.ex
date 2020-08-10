@@ -45,4 +45,8 @@ defmodule Lastfmex.Service do
   defp optional("user.getfriends"), do: [:recenttracks, :limit, :page]
   defp optional("user.getlovedtracks"), do: [:limit, :page]
   defp optional("user.gettopalbums"), do: [:period, :limit, :page]
+
+  defp optional("chart.gettopartists"), do: [:limit, :page]
+  defp optional("chart.gettoptags"), do: [:limit, :page]
+  defp optional("chart.gettoptracks"), do: [:limit, :page]
 end
