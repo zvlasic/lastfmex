@@ -13,7 +13,5 @@ defmodule Lastfmex.User do
   def get_loved_tracks(user_name, opts \\ []), do: call("user.getlovedtracks", user_name, opts)
 
   @spec get_top_albums(String.t(), [paginate()]) :: map() | {:error, :not_found}
-  def get_top_albums(user_name, opts) do
-    call("user.gettopalbums", user_name, opts)
-  end
+  def get_top_albums(user_name, opts), do: call("user.gettopalbums", user_name, opts)
 end
