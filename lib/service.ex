@@ -9,7 +9,7 @@ defmodule Lastfmex.Service do
       |> HTTPoison.get()
 
     case response.status_code do
-      200 -> Poison.decode!(response.body)
+      200 -> Jason.decode!(response.body, keys: :atoms)
       404 -> {:error, :not_found}
     end
   end
