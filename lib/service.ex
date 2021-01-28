@@ -1,4 +1,6 @@
-defmodule Lastfmex.Service do
+import Defmodulep
+
+defmodulep Lastfmex.Service, visible_to: [Lastfmex.Chart, Lastfmex.User] do
   @spec call(String.t(), String.t(), Keyword.t()) :: map() | {:error, :not_found}
   def call(api_method, user_name, optional \\ []) do
     {:ok, response} =
