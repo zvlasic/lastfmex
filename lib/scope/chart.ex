@@ -1,6 +1,5 @@
 defmodule Lastfmex.Chart do
   import Defmodulep
-
   requirep(Lastfmex.Service, as: Service)
 
   @spec get_top_artists(String.t()) :: map() | {:error, :not_found}
