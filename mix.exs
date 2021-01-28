@@ -20,7 +20,7 @@ defmodule Lastfmex.MixProject do
   defp deps do
     [
       {:credo, "~> 1.3"},
-      {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
+      {:dialyxir, git: "git@github.com:jeremyjh/dialyxir.git", only: [:dev], runtime: false},
       {:httpoison, "~> 1.6"}
     ]
   end
