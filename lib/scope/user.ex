@@ -1,6 +1,6 @@
 defmodule Lastfmex.User do
   import Defmodulep
-  requirep(Lastfmex.Service, as: Service)
+  requirep Lastfmex.Service, as: Service
 
   @type paginate :: [limit: integer(), page: integer()]
 
