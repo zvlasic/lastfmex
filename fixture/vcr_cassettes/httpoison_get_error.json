@@ -1,0 +1,28 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "http://ws.audioscrobbler.com/2.0?format=json&api_key=19430514aeccb968863b443794c179e7&method=user.gettopalbums&user=evil_zlayo&limit=10000"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"error\":6,\"message\":\"limit param out of bounds (1-1000)\"}",
+      "headers": {
+        "Server": "openresty/1.9.15.1",
+        "Date": "Fri, 29 Jan 2021 19:12:39 GMT",
+        "Content-Type": "application/json",
+        "content-length": "58",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Max-Age": "86400",
+        "Via": "1.1 google"
+      },
+      "status_code": 400,
+      "type": "ok"
+    }
+  }
+]
