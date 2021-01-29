@@ -22,6 +22,7 @@ defmodule Lastfmex.MixProject do
       {:credo, "~> 1.3"},
       {:defmodulep, "~> 0.1", github: "josevalim/defmodulep"},
       {:dialyxir, github: "jeremyjh/dialyxir", only: [:dev], runtime: false},
+      {:exvcr, "~> 0.11", only: :test},
       {:httpoison, "~> 1.6"}
     ]
   end
