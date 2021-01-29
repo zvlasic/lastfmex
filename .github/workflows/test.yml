@@ -11,19 +11,28 @@ jobs:
     name: Build and test
     runs-on: ubuntu-latest
 
+    env:
+      CACHE_VERSION: v1
+
     steps:
     - uses: actions/checkout@v2
+
     - name: Set up Elixir
       uses: actions/setup-elixir@v1
       with:
         elixir-version: '1.11.3'
         otp-version: '23.2'
-    - name: Restore dependencies cache
+
+    - name: Restore cached deps
       uses: actions/cache@v2
       with:
-        path: deps
-        key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
-        restore-keys: ${{ runner.os }}-mix-
+        path: |
+          deps
+           _build
+        key: deps-${{ env.CACHE_VERSION }}-${{ github.ref }}-${{ hashFiles(format('{0}{1}', github.workspace, '/mix.lock')) }}
+        restore-keys: |
+          deps-${{ env.CACHE_VERSION }}-${{ github.ref }}-
+          deps-${{ env.CACHE_VERSION }}-
 
     - name: Install dependencies
       run: mix deps.get
