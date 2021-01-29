@@ -21,7 +21,7 @@ defmodulep Lastfmex.Service, visible_to: [Lastfmex.Chart, Lastfmex.User] do
       Keyword.merge(
         [
           format: "json",
-          api_key: System.fetch_env!("API_KEY"),
+          api_key: System.fetch_env!("LASTFMEX_KEY"),
           method: method,
           user: user
         ],

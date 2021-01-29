@@ -13,6 +13,7 @@ jobs:
 
     env:
       CACHE_VERSION: v1
+      LASTFMEX_KEY: key
 
     steps:
     - uses: actions/checkout@v2
