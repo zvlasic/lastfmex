@@ -1,0 +1,28 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": [],
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "http://ws.audioscrobbler.com/2.0?format=json&api_key=19430514aeccb968863b443794c179e7&method=user.gettopalbums&user=evil_zlayo&limit=3"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"topalbums\":{\"album\":[{\"artist\":{\"url\":\"https:\\/\\/www.last.fm\\/music\\/The+National\",\"name\":\"The National\",\"mbid\":\"664c3e0e-42d8-48c1-b209-1efca19c0325\"},\"@attr\":{\"rank\":\"1\"},\"image\":[{\"size\":\"small\",\"#text\":\"https:\\/\\/lastfm.freetls.fastly.net\\/i\\/u\\/34s\\/7cc8225887394cc18a13538c68848462.png\"},{\"size\":\"medium\",\"#text\":\"https:\\/\\/lastfm.freetls.fastly.net\\/i\\/u\\/64s\\/7cc8225887394cc18a13538c68848462.png\"},{\"size\":\"large\",\"#text\":\"https:\\/\\/lastfm.freetls.fastly.net\\/i\\/u\\/174s\\/7cc8225887394cc18a13538c68848462.png\"},{\"size\":\"extralarge\",\"#text\":\"https:\\/\\/lastfm.freetls.fastly.net\\/i\\/u\\/300x300\\/7cc8225887394cc18a13538c68848462.png\"}],\"playcount\":\"4529\",\"url\":\"https:\\/\\/www.last.fm\\/music\\/The+National\\/High+Violet\",\"name\":\"High Violet\",\"mbid\":\"25322466-a29b-417b-b560-399687b91ddd\"},{\"artist\":{\"url\":\"https:\\/\\/www.last.fm\\/music\\/The+National\",\"name\":\"The National\",\"mbid\":\"\"},\"@attr\":{\"rank\":\"2\"},\"image\":[{\"size\":\"small\",\"#text\":\"\"},{\"size\":\"medium\",\"#text\":\"\"},{\"size\":\"large\",\"#text\":\"\"},{\"size\":\"extralarge\",\"#text\":\"\"}],\"playcount\":\"2916\",\"url\":\"https:\\/\\/www.last.fm\\/music\\/The+National\\/Trouble+Will+Find+Me+%5BBonus+Track%5D\",\"name\":\"Trouble Will Find Me [Bonus Track]\",\"mbid\":\"\"},{\"artist\":{\"url\":\"https:\\/\\/www.last.fm\\/music\\/Jamie+xx\",\"name\":\"Jamie xx\",\"mbid\":\"d1515727-4a93-4c0d-88cb-d7a9fce01879\"},\"@attr\":{\"rank\":\"3\"},\"image\":[{\"size\":\"small\",\"#text\":\"https:\\/\\/lastfm.freetls.fastly.net\\/i\\/u\\/34s\\/83e49ea6cea3d9418ab3368af6052097.png\"},{\"size\":\"medium\",\"#text\":\"https:\\/\\/lastfm.freetls.fastly.net\\/i\\/u\\/64s\\/83e49ea6cea3d9418ab3368af6052097.png\"},{\"size\":\"large\",\"#text\":\"https:\\/\\/lastfm.freetls.fastly.net\\/i\\/u\\/174s\\/83e49ea6cea3d9418ab3368af6052097.png\"},{\"size\":\"extralarge\",\"#text\":\"https:\\/\\/lastfm.freetls.fastly.net\\/i\\/u\\/300x300\\/83e49ea6cea3d9418ab3368af6052097.png\"}],\"playcount\":\"2641\",\"url\":\"https:\\/\\/www.last.fm\\/music\\/Jamie+xx\\/In+Colour\",\"name\":\"In Colour\",\"mbid\":\"23a92dc8-d233-4f5b-96a4-a5e76000c174\"}],\"@attr\":{\"page\":\"1\",\"total\":\"12042\",\"user\":\"evil_zlayo\",\"perPage\":\"3\",\"totalPages\":\"4014\"}}}",
+      "headers": {
+        "Server": "openresty/1.9.15.1",
+        "Date": "Fri, 29 Jan 2021 10:15:34 GMT",
+        "Content-Type": "application/json",
+        "content-length": "2053",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Max-Age": "86400",
+        "Via": "1.1 google"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

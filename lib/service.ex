@@ -11,7 +11,7 @@ defmodulep Lastfmex.Service, visible_to: [Lastfmex.Chart, Lastfmex.User] do
       |> HTTPoison.get()
 
     case response.status_code do
-      200 -> Jason.decode!(response.body, keys: :atoms)
+      200 -> {:ok, Jason.decode!(response.body, keys: :atoms)}
       404 -> {:error, :not_found}
     end
   end
@@ -21,7 +21,7 @@ defmodulep Lastfmex.Service, visible_to: [Lastfmex.Chart, Lastfmex.User] do
       Keyword.merge(
         [
           format: "json",
-          api_key: System.fetch_env!("API_KEY"),
+          api_key: System.fetch_env!("LASTFMEX_KEY"),
           method: method,
           user: user
         ],
