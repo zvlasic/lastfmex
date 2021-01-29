@@ -21,7 +21,7 @@ defmodule Lastfmex.MixProject do
     [
       {:credo, "~> 1.3"},
       {:defmodulep, "~> 0.1", github: "josevalim/defmodulep"},
-      {:dialyxir, git: "git@github.com:jeremyjh/dialyxir.git", only: [:dev], runtime: false},
+      {:dialyxir, github: "jeremyjh/dialyxir", only: [:dev], runtime: false},
       {:httpoison, "~> 1.6"}
     ]
   end
