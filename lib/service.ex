@@ -1,33 +1,38 @@
 import Defmodulep
 
 defmodulep Lastfmex.Service, visible_to: [Lastfmex.Chart, Lastfmex.User] do
-  @spec call(String.t(), String.t(), Keyword.t()) :: map() | {:error, :not_found}
-  def call(api_method, user_name, optional \\ []) do
-    {:ok, response} =
-      "http://ws.audioscrobbler.com/2.0"
-      |> URI.parse()
-      |> Map.put(:query, query_params(api_method, user_name, optional))
-      |> URI.to_string()
-      |> HTTPoison.get()
+  use HTTPoison.Base
 
-    case response.status_code do
-      200 -> {:ok, Jason.decode!(response.body, keys: :atoms)}
-      404 -> {:error, :not_found}
+  @spec call(String.t(), String.t(), Keyword.t()) :: map() | {:error, :not_found}
+  def call(api_method, username, opts \\ []) do
+    case call_lastfm_api(api_method, username, opts) do
+      {:ok, response} -> process_success(response)
+      {:error, error} -> process_error(error)
     end
   end
 
-  defp query_params(method, user, optional) do
+  def process_response_body(body), do: Jason.decode!(body, keys: :atoms)
+
+  defp call_lastfm_api(api_method, username, opts) do
     params =
       Keyword.merge(
         [
           format: "json",
           api_key: System.fetch_env!("LASTFMEX_KEY"),
-          method: method,
-          user: user
+          method: api_method,
+          user: username
         ],
-        optional
+        opts
       )
 
-    URI.encode_query(params)
+    __MODULE__.get("http://ws.audioscrobbler.com/2.0", [], params: params)
   end
+
+  defp process_success(response) do
+    if response.status_code == 200,
+      do: {:ok, response.body},
+      else: {:error, response.body}
+  end
+
+  defp process_error(error), do: {:error, %{error: nil, message: error.reason}}
 end
