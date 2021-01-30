@@ -47,6 +47,10 @@ jobs:
       run: mix format --check-formatted
       shell: bash
 
+    - name: Run credo
+      run: mix credo
+      shell: bash
+
     - name: Run dialyzer
       run: mix dialyzer
       shell: bash
