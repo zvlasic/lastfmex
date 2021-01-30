@@ -11,6 +11,7 @@ defmodulep Lastfmex.Service, visible_to: [Lastfmex.Chart, Lastfmex.User] do
     end
   end
 
+  @impl HTTPoison.Base
   def process_response_body(body), do: Jason.decode!(body, keys: :atoms)
 
   defp call_lastfm_api(api_method, username, opts) do
