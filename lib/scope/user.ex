@@ -24,4 +24,9 @@ defmodule Lastfmex.User do
           {:ok, map()} | {:error, :not_found}
   def get_top_albums(user_name, opts \\ []),
     do: Service.call("user.gettopalbums", user_name, opts)
+
+  @spec get_top_tracks(String.t(), limit: integer(), page: integer(), period: period_length()) ::
+          {:ok, map()} | {:error, :not_found}
+  def get_top_tracks(user_name, opts \\ []),
+    do: Service.call("user.gettoptracks", user_name, opts)
 end
