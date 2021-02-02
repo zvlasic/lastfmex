@@ -3,7 +3,9 @@ import Defmodulep
 defmodulep Lastfmex.Service, visible_to: [Lastfmex.Chart, Lastfmex.User] do
   use HTTPoison.Base
 
-  @spec call(String.t(), String.t(), Keyword.t()) :: map() | {:error, :not_found}
+  @type error :: %{message: String.t(), error: String.t()}
+
+  @spec call(String.t(), String.t(), Keyword.t()) :: {:ok, map()} | {:error, error()}
   def call(api_method, username, opts \\ []) do
     case call_lastfm_api(api_method, username, opts) do
       {:ok, response} -> process_success(response)
