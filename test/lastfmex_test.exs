@@ -6,9 +6,8 @@ defmodule LastfmexTest do
     use_cassette "httpoison_get" do
       {:ok, response} = Lastfmex.User.top_albums("evil_zlayo", limit: 3)
 
-      assert Enum.any?(Map.keys(response), &(&1 == :topalbums))
-      assert response.topalbums."@attr".user == "evil_zlayo"
-      assert length(response.topalbums.album) == 3
+      assert response."@attr".user == "evil_zlayo"
+      assert length(response.album) == 3
     end
   end
 
